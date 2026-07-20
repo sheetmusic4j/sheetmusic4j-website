@@ -1,0 +1,19 @@
+baseURL = 'https://sheetmusic4j.com/'
+locale = 'en-US'
+title = 'Sheetmusic4J'
+theme = 'hugo-theme-relearn'
+enableRobotsTXT = true
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+themeVariant = 'zen-light'
+editURL = 'https://github.com/sheetmusic4j/sheetmusic4j-website/edit/main/content/'
+# Fix non-canonical "/index.html" URLs in og:url and other generated permalinks.
+disableExplicitIndexURLs = true
+# Site-wide default social share image (1200x630), used for og:image / twitter:image.
+images = ['img/og-image.png']
+
+[params.author]
+name = 'Frank Delporte'

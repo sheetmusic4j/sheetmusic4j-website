@@ -1,0 +1,21 @@
+{{- /*
+  Lists the latest N status posts across all content/status/<year>/ folders,
+  rendered as theme cards (same look as the "Why Lottie4J" cards).
+  Usage: {{< latest-status 3 >}}   (N defaults to 3)
+*/ -}}
+{{- $n := int (.Get 0 | default 3) -}}
+{{- $posts := where site.RegularPages "Section" "status" -}}
+{{- $posts = first $n $posts.ByDate.Reverse -}}
+{{- $cards := slice -}}
+{{- range $posts -}}
+  {{- $desc := or .Description (.Summary | plainify | truncate 120) -}}
+  {{- $cards = $cards | append (dict
+      "title"   .Title
+      "href"    .Path
+      "icon"    "newspaper"
+      "content" (printf "<p><strong>%s</strong></p><p>%s</p>" (.Date.Format "Jan 2, 2006") $desc)
+  ) -}}
+{{- end -}}
+<div class="sm4j-latest">
+{{ partial "shortcodes/cards.html" (dict "page" .Page "content" $cards) }}
+</div>

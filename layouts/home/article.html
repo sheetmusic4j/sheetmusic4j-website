@@ -1,0 +1,18 @@
+{{- /*
+  Project override of the relearn theme's home/article.html.
+  The home page provides its own hero section (including the page <h1>) from
+  content/_index.md, so we intentionally skip the theme's default heading.html
+  partial here to avoid a duplicate top-level heading. All other pages are
+  unaffected (they use the theme's _default/article.html).
+*/ -}}
+<article class="home">
+  <header class="headline">
+    {{- partial "content-header.html" . }}
+  </header>
+{{ partial "heading-pre.html" . }}{{ partial "heading-post.html" . }}
+
+{{ partial "article-content.html" . }}
+  <footer class="footline">
+    {{- partial "content-footer.html" . }}
+  </footer>
+</article>

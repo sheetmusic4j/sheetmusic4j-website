@@ -1,0 +1,53 @@
+{{- /*
+  Project override of the relearn theme's custom-header.html.
+  Keeps the theme's original custom.css / custom.js loading behaviour, and
+  additionally injects a canonical link and JSON-LD structured data for SEO.
+*/ -}}
+
+{{- /* ---- canonical URL (Hugo's native .Permalink is already clean) ---- */ -}}
+{{- if not (isset .Params "canonical") }}
+    <link rel="canonical" href="{{ .Permalink }}">
+{{- end }}
+
+{{- /* ---- JSON-LD structured data ---- */ -}}
+{{- if .IsHome }}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareSourceCode",
+      "name": "Lottie4J",
+      "description": "Open-source Java library to parse Lottie animations into Java objects, generate Lottie files, and play them as native JavaFX animations, no WebView required.",
+      "url": {{ .Permalink }},
+      "codeRepository": "https://github.com/lottie4j/lottie4j",
+      "programmingLanguage": "Java",
+      "runtimePlatform": "Java 21+, JavaFX",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "image": {{ (printf "img/og-image.png" | absURL) }},
+      "author": {
+        "@type": "Person",
+        "name": {{ partialCached "_relearn/authorName.gotmpl" . | default "Frank Delporte" }}
+      }
+    }
+    </script>
+{{- end }}
+
+{{- /* ---- theme default: load custom.css / custom.js if present ---- */ -}}
+{{- $assetBusting := partialCached "assetbusting.gotmpl" . }}
+
+{{- $filePath := "css/custom.css" }}
+{{- with (resources.Get (printf "/%s" $filePath)) }}
+    <link href="{{ .RelPermalink }}{{ $assetBusting }}" rel="stylesheet">
+{{- else }}
+  {{- if (fileExists (printf "/static/%s" $filePath)) }}
+    <link href="{{ printf "%s" $filePath | relURL }}{{ $assetBusting }}" rel="stylesheet">
+  {{- end }}
+{{- end }}
+
+{{- $filePath := "js/custom.js" }}
+{{- with (resources.Get (printf "/%s" $filePath)) }}
+    <script src="{{ .RelPermalink }}{{ $assetBusting }}" defer></script>
+{{- else }}
+  {{- if (fileExists (printf "/static/%s" $filePath)) }}
+    <script src="{{ printf "%s" $filePath | relURL }}{{ $assetBusting }}" defer></script>
+  {{- end }}
+{{- end }}
