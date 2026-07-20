@@ -1,6 +1,6 @@
 <!-- Load the web component used to render the header animation. -->
 <script type="module" src="https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js"></script>
-{{- $logoAnimation := "/assets/logo/sheetmusic4j.json" -}}
+{{- $logoAnimation := "/img/logo/sheetmusic4j.json" -}}
 {{- with resources.Get "logo/sheetmusic4j.json" -}}
   {{- $logoAnimation = .RelPermalink -}}
 {{- end -}}
