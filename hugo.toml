@@ -1,4 +1,4 @@
-baseURL = 'https://sheetmusic4j.com/'
+baseURL = 'sheetmusic4j.com'
 locale = 'en-US'
 title = 'Sheetmusic4J'
 theme = 'hugo-theme-relearn'

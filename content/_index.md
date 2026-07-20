@@ -70,5 +70,5 @@ Needs only `javafx.graphics`. Fast startup, tiny jlink footprint, no network.
   {{% /card %}}
 {{< /cards >}}
 
-The sources of this project are available on [github.com/sheetmusic4j/sheetmusic4j](https://github.com/lottie4j/lottie4j).
+The sources of this project are available on [github.com/sheetmusic4j/sheetmusic4j](https://github.com/sheetmusic4j/sheetmusic4j).
 
