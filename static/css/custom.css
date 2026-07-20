@@ -26,6 +26,7 @@
   box-sizing: border-box;
   width: 148px;
   height: 148px;
+  object-fit: contain;
   margin: 0 auto 1.25rem auto;
   display: block;
   /* White chip so the navy "Lottie" wordmark and circle stay readable on the

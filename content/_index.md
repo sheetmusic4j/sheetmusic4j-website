@@ -5,7 +5,7 @@ type = "home"
 +++
 
 <div class="sm4j-hero">
-  <img class="sm4j-hero-logo" src="/favicon/android-chrome-512x512.png" alt="Sheetmusic4J logo" width="120" height="120" loading="eager">
+  <img class="sm4j-hero-logo" src="/img/logo/sheetmusic4j.png" alt="Sheetmusic4J logo" loading="eager">
   <h1 class="sm4j-hero-title">Sheetmusic4J for Java &amp; JavaFX</h1>
   <p class="sm4j-hero-sub">
     Parse and render sheet music in Java(FX).
