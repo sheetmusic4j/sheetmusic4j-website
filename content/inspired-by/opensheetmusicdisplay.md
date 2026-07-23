@@ -1,7 +1,7 @@
 +++
 title = "OpenSheetMusicDisplay"
 description = "OpenSheetMusicDisplay (OSMD) renders MusicXML sheet music in the browser and headless with Node.js. It's the JavaScript-world sibling Sheetmusic4J looked to for JavaFX."
-weight = 2
+weight = 30
 +++
 
 ## What Is OpenSheetMusicDisplay?

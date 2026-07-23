@@ -1,7 +1,7 @@
 +++
 title = "MusicXML"
 description = "MusicXML is the open, standard format for exchanging digital sheet music between notation software. It's the file format Sheetmusic4J reads and writes."
-weight = 1
+weight = 10
 +++
 
 ## What Is MusicXML?

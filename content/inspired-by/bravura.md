@@ -1,7 +1,7 @@
 +++
 title = "Bravura"
 description = "Bravura is the reference SMuFL music font Sheetmusic4J uses to draw clefs, noteheads, rests, and every other engraved symbol."
-weight = 5
+weight = 50
 +++
 
 ## What Is Bravura?

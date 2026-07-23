@@ -1,7 +1,7 @@
 +++
 title = "MIDI"
 description = "The Standard MIDI File format that Sheetmusic4J can import and export alongside MusicXML, using Java's built-in javax.sound.midi API."
-weight = 3
+weight = 60
 +++
 
 ## What Is MIDI?

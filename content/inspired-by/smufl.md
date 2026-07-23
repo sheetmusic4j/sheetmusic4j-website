@@ -1,7 +1,7 @@
 +++
 title = "SMuFL"
 description = "SMuFL is the open specification that maps music notation symbols to standard code points in a font, the standard Sheetmusic4J's Bravura-based glyph rendering is built on."
-weight = 4
+weight = 40
 +++
 
 ## What Is SMuFL?
