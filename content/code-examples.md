@@ -100,6 +100,10 @@ public class DemoApplication extends Application {
 
 `SheetView` is content-sized: it re-engraves whenever `systemWidth` or `zoom` changes, and reports the resulting size to its parent, so a `ScrollPane` shows scrollbars automatically once the rendered score is bigger than the viewport.
 
+The `fxdemo` module wraps `SheetView` in a standalone application for loading and inspecting MusicXML/MIDI files, with a debug/inspection pane alongside the rendered score:
+
+![Sheetmusic4J fxdemo application showing a rendered score alongside its inspection pane](/img/sheetmusic4j/screenshot-demo-app.png)
+
 ## Play-Along Rendering with StripSheetView
 
 For apps that follow along with playback, like [MelodyMatrix](https://melodymatrix.rocks/), `StripSheetView` engraves the score as one continuous strip and keeps a fixed on-screen cursor, translating the score underneath it as `cursorTime` advances. That makes advancing playback a cheap position update instead of a re-render on every frame:
@@ -121,6 +125,8 @@ stripView.setCursorTime(quartersElapsed);
 MusicElement currentNote = /* the note/chord element currently playing */ null;
 stripView.noteHighlights().put(currentNote, Color.web("#f0b010"));
 ```
+
+![Sheetmusic4J strip view in MelodyMatrix](/img/melodymatrix/screenshot.png)
 
 ## Further Reading
 

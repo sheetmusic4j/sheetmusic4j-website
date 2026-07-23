@@ -82,9 +82,17 @@ Wondering about the standards behind it? Read what [inspired Sheetmusic4J](/insp
 
 The sources of this project are available on [github.com/sheetmusic4j/sheetmusic4j](https://github.com/sheetmusic4j/sheetmusic4j).
 
+## Used By
+
+**[MelodyMatrix](https://melodymatrix.rocks/)** is a cross-platform MIDI recording and visualization app (Java, Kotlin, JavaFX) that turns live keyboard performances into real-time visual displays, including piano roll, staff notation, guitar fretboard, and chord diagrams. It uses Sheetmusic4J for its staff notation view.
+
+![MelodyMatrix staff notation view, rendered with Sheetmusic4J](/img/melodymatrix/screenshot.png)
+
+Building something with Sheetmusic4J? [Let us know](https://github.com/sheetmusic4j/sheetmusic4j/issues) and we'll add it here.
+
 ## Current status
 
-Sheetmusic4J just had its first release, **0.0.1**, published to check whether there's interest in a native Java(FX) sheet music library before investing further. It's already used in [MelodyMatrix](https://melodymatrix.rocks/). The module structure, domain model, MusicXML/MIDI I/O, layout engine, JavaFX rendering (including a play-along strip view with a moving cursor and per-note highlighting), and the demo app are all in place; rendering fidelity and MusicXML/MIDI coverage are still being expanded.
+Sheetmusic4J just had its first release, **0.0.1**, published to check whether there's interest in a native Java(FX) sheet music library before investing further. The module structure, domain model, MusicXML/MIDI I/O, layout engine, JavaFX rendering (including a play-along strip view with a moving cursor and per-note highlighting), and the demo app are all in place; rendering fidelity and MusicXML/MIDI coverage are still being expanded.
 
 Latest updates:
 
