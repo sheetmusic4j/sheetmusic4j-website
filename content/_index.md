@@ -12,14 +12,14 @@ type = "home"
     <br/>
     <strong>No WebView required.</strong>
   </p>
-  <p class="sm4j-hero-release"><span class="sm4j-hero-dot"></span> No release yet...</p>
+  <p class="sm4j-hero-release"><span class="sm4j-hero-dot"></span> Latest release: <a href="/releases/">v0.0.1 · 2026-07-23</a></p>
   <p class="sm4j-hero-cta">
     <a class="sm4j-btn sm4j-btn-primary" href="#quick-start"><i class="fas fa-rocket"></i> Get Started</a>
     <a class="sm4j-btn sm4j-btn-ghost" href="https://github.com/sheetmusic4j/sheetmusic4j" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
   </p>
 </div>
 
-**Sheetmusic4J is an open-source Java library that parses MusicXML into Java objects and renders them as native JavaFX music sheet views — no WebView, no browser engine, no JavaScript bridge.**
+**Sheetmusic4J is an open-source Java library that parses MusicXML into Java objects and renders them as native JavaFX music sheet views: no WebView, no browser engine, no JavaScript bridge.**
 
 ## Quick start
 
@@ -50,8 +50,16 @@ implementation "com.sheetmusic4j:fxviewer:${sheetmusic4jVersion}"
 Then load a file and drop the view into your scene:
 
 ```java
-TODO
+Score score = ScoreFile.load(Path.of("song.musicxml"));
+
+SheetView sheetView = new SheetView();
+sheetView.setScore(score);
+
+stage.setScene(new Scene(new ScrollPane(sheetView), 900, 600));
+stage.show();
 ```
+
+See the [code examples](/code-examples/) for the full, runnable application, core-only (parse/generate) usage, and play-along cursor/highlighting.
 
 ## Why Sheetmusic4J
 
@@ -63,12 +71,24 @@ Drawn straight to a JavaFX `Canvas`. No browser, no JS bridge. It's just a `Node
 Read MusicXML into typed Java objects, and write valid files back out.
   {{% /card %}}
   {{% card title="Modern, minimal Java" icon="fab fa-java" %}}
-Built on Java 21 LTS with Records — a small, maintainable codebase.
+Built on Java 21 LTS with Records, a small, maintainable codebase.
   {{% /card %}}
   {{% card title="Lightweight &amp; offline-first" icon="fas fa-feather" %}}
 Needs only `javafx.graphics`. Fast startup, tiny jlink footprint, no network.
   {{% /card %}}
 {{< /cards >}}
 
+Wondering about the standards behind it? Read what [inspired Sheetmusic4J](/inspired-by/): MusicXML, OpenSheetMusicDisplay, MIDI, SMuFL, the Bravura music font, and the MusicXML.com test files. And check the [sheetmusic terminology](/notation-terminology/) glossary to see which class/method draws which notation element.
+
 The sources of this project are available on [github.com/sheetmusic4j/sheetmusic4j](https://github.com/sheetmusic4j/sheetmusic4j).
+
+## Current status
+
+Sheetmusic4J just had its first release, **0.0.1**, published to check whether there's interest in a native Java(FX) sheet music library before investing further. It's already used in [MelodyMatrix](https://melodymatrix.rocks/). The module structure, domain model, MusicXML/MIDI I/O, layout engine, JavaFX rendering (including a play-along strip view with a moving cursor and per-note highlighting), and the demo app are all in place; rendering fidelity and MusicXML/MIDI coverage are still being expanded.
+
+Latest updates:
+
+{{< latest-status 4 >}}
+
+Follow the progress in the [status posts](/status/) and check the [release notes](/releases/) for the latest changes.
 
