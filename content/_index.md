@@ -61,6 +61,10 @@ stage.show();
 
 See the [code examples](/code-examples/) for the full, runnable application, core-only (parse/generate) usage, and play-along cursor/highlighting.
 
+**Watch:** an introduction to Sheetmusic4J — Render Interactive Sheet Music in JavaFX (MusicXML Library).
+
+{{< youtube D2uaHpvC9ao >}}
+
 ## Why Sheetmusic4J
 
 {{< cards >}}
