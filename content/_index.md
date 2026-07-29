@@ -12,7 +12,7 @@ type = "home"
     <br/>
     <strong>No WebView required.</strong>
   </p>
-  <p class="sm4j-hero-release"><span class="sm4j-hero-dot"></span> Latest release: <a href="/releases/">v0.0.1 · 2026-07-23</a></p>
+  <p class="sm4j-hero-release"><span class="sm4j-hero-dot"></span> Latest release: <a href="/releases/">v0.0.2 · 2026-07-30</a></p>
   <p class="sm4j-hero-cta">
     <a class="sm4j-btn sm4j-btn-primary" href="#quick-start"><i class="fas fa-rocket"></i> Get Started</a>
     <a class="sm4j-btn sm4j-btn-ghost" href="https://github.com/sheetmusic4j/sheetmusic4j" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
@@ -82,7 +82,7 @@ Needs only `javafx.graphics`. Fast startup, tiny jlink footprint, no network.
   {{% /card %}}
 {{< /cards >}}
 
-Wondering about the standards behind it? Read what [inspired Sheetmusic4J](/inspired-by/): MusicXML, OpenSheetMusicDisplay, MIDI, SMuFL, the Bravura music font, and the MusicXML.com test files. And check the [sheetmusic terminology](/notation-terminology/) glossary to see which class/method draws which notation element.
+Wondering about the standards behind it? Read what [inspired Sheetmusic4J](/inspired-by/): MusicXML, OpenSheetMusicDisplay, MIDI, ABC notation, Guitar Pro, SMuFL, the Bravura music font, and the MusicXML.com test files. And check the [sheetmusic terminology](/notation-terminology/) glossary to see which class/method draws which notation element.
 
 The sources of this project are available on [github.com/sheetmusic4j/sheetmusic4j](https://github.com/sheetmusic4j/sheetmusic4j).
 
@@ -96,7 +96,7 @@ Building something with Sheetmusic4J? [Let us know](https://github.com/sheetmusi
 
 ## Current status
 
-Sheetmusic4J just had its first release, **0.0.1**, published to check whether there's interest in a native Java(FX) sheet music library before investing further. The module structure, domain model, MusicXML/MIDI I/O, layout engine, JavaFX rendering (including a play-along strip view with a moving cursor and per-note highlighting), and the demo app are all in place; rendering fidelity and MusicXML/MIDI coverage are still being expanded.
+Sheetmusic4J is at release **0.0.2**, still early and published to gauge interest in a native Java(FX) sheet music library before investing further. The module structure, domain model, layout engine, JavaFX rendering (including a play-along strip view with a moving cursor and per-note highlighting), and the demo app are all in place. On top of MusicXML and MIDI, this release adds [ABC notation](/inspired-by/abc/) import/export and basic, experimental [Guitar Pro](/inspired-by/guitarpro/) 7/8 import; rendering fidelity and format coverage are still being expanded.
 
 Latest updates:
 
