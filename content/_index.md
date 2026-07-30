@@ -12,7 +12,7 @@ type = "home"
     <br/>
     <strong>No WebView required.</strong>
   </p>
-  <p class="sm4j-hero-release"><span class="sm4j-hero-dot"></span> Latest release: <a href="/releases/">v0.0.2 · 2026-07-30</a></p>
+  <p class="sm4j-hero-release"><span class="sm4j-hero-dot"></span> Latest release: <a href="/releases/">v0.0.3 · 2026-07-30</a></p>
   <p class="sm4j-hero-cta">
     <a class="sm4j-btn sm4j-btn-primary" href="#quick-start"><i class="fas fa-rocket"></i> Get Started</a>
     <a class="sm4j-btn sm4j-btn-ghost" href="https://github.com/sheetmusic4j/sheetmusic4j" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
@@ -96,7 +96,7 @@ Building something with Sheetmusic4J? [Let us know](https://github.com/sheetmusi
 
 ## Current status
 
-Sheetmusic4J is at release **0.0.2**, still early and published to gauge interest in a native Java(FX) sheet music library before investing further. The module structure, domain model, layout engine, JavaFX rendering (including a play-along strip view with a moving cursor and per-note highlighting), and the demo app are all in place. On top of MusicXML and MIDI, this release adds [ABC notation](/inspired-by/abc/) import/export and basic, experimental [Guitar Pro](/inspired-by/guitarpro/) 7/8 import; rendering fidelity and format coverage are still being expanded.
+Sheetmusic4J is at release **0.0.3**, still early and published to gauge interest in a native Java(FX) sheet music library before investing further. The module structure, domain model, layout engine, JavaFX rendering (including a play-along strip view with a moving cursor and per-note highlighting), and the demo app are all in place. On top of MusicXML and MIDI, it supports [ABC notation](/inspired-by/abc/) import/export (now fully wired into the `ScoreFile` facade) and basic, experimental [Guitar Pro](/inspired-by/guitarpro/) 7/8 import; rendering fidelity and format coverage are still being expanded.
 
 Latest updates:
 

@@ -4,9 +4,19 @@ description = "Release notes and changelog for the Sheetmusic4J Java library, in
 weight = 10
 +++
 
-## 2026-07-30, 0.0.2
+## 2026-07-30, 0.0.3
 
-The second release of Sheetmusic4J, focused on two new input formats and a broad round of rendering improvements. More info and details in [this blog post](/status/2026/20260730-release-0.0.2/).
+A small patch release that finishes wiring [ABC notation](/inspired-by/abc/) into the `ScoreFile` facade. More info and details in [this blog post](/status/2026/20260730-release-0.0.3/).
+
+* **`ScoreFile`**
+  * `ScoreFile.load()` and `ScoreFile.save()` now actually dispatch `.abc` files to `AbcReader` and `AbcWriter`. In 0.0.2 those classes existed, but the facade did not yet recognize the `.abc` extension, so loading or saving an ABC file through `ScoreFile` failed with an `Unsupported file extension` error. Direct use of `AbcReader`/`AbcWriter` was unaffected.
+  * Added round-trip tests covering `.abc` load and save through the facade.
+
+Full differences are listed on [GitHub > compare/v0.0.2...v0.0.3](https://github.com/sheetmusic4j/sheetmusic4j/compare/v0.0.2...v0.0.3)
+
+## 2026-07-29, 0.0.2
+
+The second release of Sheetmusic4J, focused on two new input formats and a broad round of rendering improvements. More info and details in [this blog post](/status/2026/20260729-release-0.0.2/).
 
 * **ABC notation (new)**
   * Import **and** export of [ABC music notation](/inspired-by/abc/) files (`.abc`), via new `AbcReader` and `AbcWriter` classes in `core`.
