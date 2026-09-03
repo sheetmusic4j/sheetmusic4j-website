@@ -1,6 +1,6 @@
 +++
 title = "Inspired By"
-description = "The open standards and projects that inspired Sheetmusic4J: MusicXML, OpenSheetMusicDisplay, MIDI, SMuFL, the Bravura music font, and the MusicXML.com test files."
+description = "The open standards and projects that inspired Sheetmusic4J: MusicXML, OpenSheetMusicDisplay, MIDI, SMuFL, the Bravura music font, the MusicXML.com test files, ABC notation, and Guitar Pro."
 type = "chapter"
 weight = 20
 +++
