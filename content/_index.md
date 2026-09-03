@@ -104,3 +104,6 @@ Latest updates:
 
 Follow the progress in the [status posts](/status/) and check the [release notes](/releases/) for the latest changes.
 
+## Related projects
+
+Sheetmusic4J follows the same approach as [Lottie4J](https://lottie4j.com/): parse a standard file format into typed Java objects and render it natively in JavaFX, without a WebView. Lottie4J does it for Lottie animations, Sheetmusic4J for MusicXML scores, and both are built on Java 21 with the same minimal, `javafx.graphics`-only footprint. See also [MelodyMatrix](https://melodymatrix.rocks/), the MIDI recording and visualization app that uses Sheetmusic4J for its staff notation view.
