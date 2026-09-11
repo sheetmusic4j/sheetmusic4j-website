@@ -1,8 +1,20 @@
 {{- /*
   Project override of the relearn theme's custom-header.html.
   Keeps the theme's original custom.css / custom.js loading behaviour, and
-  additionally injects a canonical link and JSON-LD structured data for SEO.
+  additionally injects a robots noindex for the search page, a canonical link
+  and JSON-LD structured data for SEO.
 */ -}}
+
+{{- /* ---- keep the theme's generated search page out of search results ----
+       /search/ is built by the theme (content/_relearn/searchpage/_content.gotmpl,
+       page type "_relearn_searchpage"); it has no content of its own, so it is
+       nothing for Google to rank. The theme only emits a robots meta for
+       untitled or SEO-hidden pages, so this page needs its own. "follow" keeps
+       the crawler walking the links; note we deliberately do NOT disallow it in
+       robots.txt, since a blocked page can never be read to see this noindex. */ -}}
+{{- if eq .Type "_relearn_searchpage" }}
+    <meta name="robots" content="noindex, follow">
+{{- end }}
 
 {{- /* ---- canonical URL (Hugo's native .Permalink is already clean) ---- */ -}}
 {{- if not (isset .Params "canonical") }}
