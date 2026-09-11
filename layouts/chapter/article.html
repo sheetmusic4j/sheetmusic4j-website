@@ -1,0 +1,21 @@
+{{- /*
+  Project override of the relearn theme's chapter/article.html.
+  Only change vs. the theme: the "Chapter <weight>" subheading is dropped.
+  Our only chapter-type page is content/status/_index.md, where the weight
+  (99) is purely a menu-ordering value, so the theme's book-style label
+  rendered as a meaningless "Chapter 99" above the page title.
+  Everything else is identical to the theme default.
+*/ -}}
+
+<article class="chapter narrow">
+  <header class="headline">
+    {{- partial "content-header.html" . }}
+  </header>
+{{ partial "heading-pre.html" . }}
+{{ partial "heading.html" . }}{{ partial "heading-post.html" . }}
+
+{{ partial "article-content.html" . }}
+  <footer class="footline">
+    {{- partial "content-footer.html" . }}
+  </footer>
+</article>

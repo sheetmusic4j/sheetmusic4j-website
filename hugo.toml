@@ -4,6 +4,11 @@ title = 'Sheetmusic4J'
 theme = 'hugo-theme-relearn'
 enableRobotsTXT = true
 
+# Only 'tags' is used. Hugo's default taxonomy set also includes 'categories',
+# which produced an empty /categories/ page that still ended up in sitemap.xml.
+[taxonomies]
+tag = 'tags'
+
 [markup.goldmark.renderer]
 unsafe = true
 

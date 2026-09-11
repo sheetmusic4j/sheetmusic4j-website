@@ -2,6 +2,7 @@
 title: "The Story Behind Sheetmusic4J"
 date: 2026-07-24
 tags: ["Java", "JavaFX", "Sheetmusic4J", "MusicXML"]
+description: "The background behind Sheetmusic4J: a Learn section in MelodyMatrix needed sheet music that follows along with playback, and no JavaFX library could do it."
 ---
 
 **2026-07-24 by Frank Delporte**

@@ -213,3 +213,12 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Date shown next to a post title in {{% children %}} listings (status index). */
+.children-date {
+  margin-left: .4rem;
+  font-size: .85em;
+  font-weight: normal;
+  white-space: nowrap;
+  opacity: .7;
+}

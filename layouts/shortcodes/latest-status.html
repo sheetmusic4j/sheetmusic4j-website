@@ -8,7 +8,29 @@
 {{- $posts = first $n $posts.ByDate.Reverse -}}
 {{- $cards := slice -}}
 {{- range $posts -}}
-  {{- $desc := or .Description (.Summary | plainify | truncate 120) -}}
+  {{- /* Prefer the front-matter description; otherwise use the post's first
+         real paragraph. Hugo's .Summary starts at the very top of the content,
+         so it glued two things onto the excerpt that the card already shows or
+         doesn't want: the "<date> by Frank Delporte" byline every status post
+         opens with, and the first section heading right after it (e.g.
+         "2026-07-30 by Frank Delporte A Quick Fix for ABC Files Right on the
+         heels of 0.0.2..."). Scanning the <p> elements skips headings, and the
+         byline test below skips that opening paragraph, so the excerpt starts
+         at the first sentence of actual prose. */ -}}
+  {{- $desc := .Description -}}
+  {{- if not $desc -}}
+    {{- range findRE `(?s)<p[^>]*>.*?</p>` .Content -}}
+      {{- if not $desc -}}
+        {{- $text := . | plainify | htmlUnescape | strings.TrimSpace -}}
+        {{- if and $text (not (findRE `^\d{4}-\d{2}-\d{2}\s+by\s` $text 1)) -}}
+          {{- $desc = $text | truncate 120 -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $desc -}}
+    {{- $desc = .Summary | plainify | truncate 120 -}}
+  {{- end -}}
   {{- $cards = $cards | append (dict
       "title"   .Title
       "href"    .Path
