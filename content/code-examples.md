@@ -16,7 +16,7 @@ If you only need the API to load, inspect, and generate MusicXML/MIDI files:
 <dependency>
     <groupId>com.sheetmusic4j</groupId>
     <artifactId>core</artifactId>
-    <version>${sheetmusic4j.version}</version>
+    <version>{{< param "release.latest.version" >}}</version>
 </dependency>
 ```
 
@@ -26,7 +26,7 @@ If you want to render sheet music with the JavaFX `SheetView`, which includes th
 <dependency>
     <groupId>com.sheetmusic4j</groupId>
     <artifactId>fxviewer</artifactId>
-    <version>${sheetmusic4j.version}</version>
+    <version>{{< param "release.latest.version" >}}</version>
 </dependency>
 ```
 

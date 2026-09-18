@@ -12,7 +12,7 @@ type = "home"
     <br/>
     <strong>No WebView required.</strong>
   </p>
-  <p class="sm4j-hero-release"><span class="sm4j-hero-dot"></span> Latest release: <a href="/releases/">v0.0.3 · 2026-07-30</a></p>
+  <p class="sm4j-hero-release"><span class="sm4j-hero-dot"></span> Latest release: <a href="/releases/">v{{< param "release.latest.version" >}} &middot; {{< param "release.latest.date" >}}</a></p>
   <p class="sm4j-hero-cta">
     <a class="sm4j-btn sm4j-btn-primary" href="#quick-start"><i class="fas fa-rocket"></i> Get Started</a>
     <a class="sm4j-btn sm4j-btn-ghost" href="https://github.com/sheetmusic4j/sheetmusic4j" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
@@ -31,18 +31,18 @@ Sheetmusic4J requires **Java 21 or higher** and is available from Maven Central.
 <dependency>
     <groupId>com.sheetmusic4j</groupId>
     <artifactId>fxviewer</artifactId>
-    <version>${sheetmusic4j.version}</version>
+    <version>{{< param "release.latest.version" >}}</version>
 </dependency>
 ```
 {{% /tab %}}
 {{% tab title="Gradle (Kotlin)" %}}
 ```kotlin
-implementation("com.sheetmusic4j:fxviewer:$sheetmusic4jVersion")
+implementation("com.sheetmusic4j:fxviewer:{{< param "release.latest.version" >}}")
 ```
 {{% /tab %}}
 {{% tab title="Gradle (Groovy)" %}}
 ```groovy
-implementation "com.sheetmusic4j:fxviewer:${sheetmusic4jVersion}"
+implementation "com.sheetmusic4j:fxviewer:{{< param "release.latest.version" >}}"
 ```
 {{% /tab %}}
 {{< /tabs >}}
