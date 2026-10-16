@@ -96,7 +96,9 @@ Building something with Sheetmusic4J? [Let us know](https://github.com/sheetmusi
 
 ## Current status
 
-Sheetmusic4J is at release **0.0.3**, still early and published to gauge interest in a native Java(FX) sheet music library before investing further. The module structure, domain model, layout engine, JavaFX rendering (including a play-along strip view with a moving cursor and per-note highlighting), and the demo app are all in place. On top of MusicXML and MIDI, it supports [ABC notation](/inspired-by/abc/) import/export (now fully wired into the `ScoreFile` facade) and basic, experimental [Guitar Pro](/inspired-by/guitarpro/) 7/8 import; rendering fidelity and format coverage are still being expanded.
+Sheetmusic4J **v{{< param "release.latest.version" >}}** is on Maven Central and already powers the staff notation view in [MelodyMatrix](https://melodymatrix.rocks/). It reads and writes MusicXML, [MIDI](/inspired-by/midi/) and [ABC notation](/inspired-by/abc/) through a single `ScoreFile` facade, imports [Guitar Pro](/inspired-by/guitarpro/) 7/8 files (experimental), and renders scores natively in JavaFX, including a play-along strip view with a moving cursor and per-note highlighting. Next up: an interactive `NodeSheetView` with clickable, selectable notes, a 3D fly-over play-along view, and steadily better engraving fidelity across real-world scores.
+
+**Like where this is going?** [Star the project on GitHub](https://github.com/sheetmusic4j/sheetmusic4j) to follow along, and [tell us what you're building](https://github.com/sheetmusic4j/sheetmusic4j/issues) with it: your use cases decide what comes next.
 
 Latest updates:
 
