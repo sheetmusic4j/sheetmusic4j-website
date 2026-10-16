@@ -128,6 +128,54 @@ stripView.noteHighlights().put(currentNote, Color.web("#f0b010"));
 
 ![Sheetmusic4J strip view in MelodyMatrix](/img/melodymatrix/screenshot.png)
 
+`SheetView` supports play-along too: its `cursorTimeProperty()` places a cursor on the system that is playing (shown when `cursorVisibleProperty()` is true), and `revealTimeProperty()` shows only the music that has started, so the page fills in note by note. For a 3D take on the strip view, `FlyOverSheetView` takes the same `setScore` and `setCursorTime` calls.
+
+![Sheetmusic4J FlyOverSheetView: the score in 3D with a glowing ball per voice](/img/sheetmusic4j/flyover-0.0.4.png)
+
+## Interactive Notes with NodeSheetView
+
+`NodeSheetView` engraves the score into a JavaFX scene graph instead of a canvas, with one `Group` per note, rest and chord. Every element can take mouse and keyboard events, effects and tooltips, and hover and selection are built in:
+
+```java
+import com.sheetmusic4j.fxviewer.NodeSheetView;
+
+NodeSheetView nodeView = new NodeSheetView();
+nodeView.setScore(score);
+
+nodeView.setOnElementClicked((element, event) ->
+        System.out.println("Clicked " + element));
+
+nodeView.selectedElementProperty().addListener((obs, oldElement, newElement) ->
+        System.out.println("Selected " + newElement));
+```
+
+![Sheetmusic4J NodeSheetView in the NodeDemoApp](/img/sheetmusic4j/nodeview-0.0.4.png)
+
+## Headless Rendering to an Image
+
+The `render-awt` module renders a score to a `BufferedImage` without JavaFX or a display, for thumbnails, server-side previews, or tests:
+
+```xml
+<dependency>
+    <groupId>com.sheetmusic4j</groupId>
+    <artifactId>render-awt</artifactId>
+    <version>{{< param "release.latest.version" >}}</version>
+</dependency>
+```
+
+```java
+import com.sheetmusic4j.render.awt.HeadlessScoreImage;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+BufferedImage image = HeadlessScoreImage.render(score, 1200);
+ImageIO.write(image, "png", new File("score.png"));
+```
+
+![A score rendered headlessly to a PNG with HeadlessScoreImage](/img/sheetmusic4j/headless-render-0.0.4.png)
+
 ## Further Reading
 
 * [Inspired By: MusicXML](/inspired-by/musicxml/): the file format Sheetmusic4J reads and writes.

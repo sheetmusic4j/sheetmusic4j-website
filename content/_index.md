@@ -12,7 +12,7 @@ type = "home"
     <br/>
     <strong>No WebView required.</strong>
   </p>
-  <p class="sm4j-hero-release"><span class="sm4j-hero-dot"></span> Latest release: <a href="/releases/">v{{< param "release.latest.version" >}} &middot; {{< param "release.latest.date" >}}</a></p>
+  <p class="sm4j-hero-release"><span class="sm4j-hero-dot"></span> Latest release: <a href="/releases/">v{{< param "release.latest.version" >}} &middot; {{< param "release.latest.date" >}}</a> &middot; <a href="{{< param "release.latest.post" >}}">Read more</a></p>
   <p class="sm4j-hero-cta">
     <a class="sm4j-btn sm4j-btn-primary" href="#quick-start"><i class="fas fa-rocket"></i> Get Started</a>
     <a class="sm4j-btn sm4j-btn-ghost" href="https://github.com/sheetmusic4j/sheetmusic4j" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
@@ -96,7 +96,7 @@ Building something with Sheetmusic4J? [Let us know](https://github.com/sheetmusi
 
 ## Current status
 
-Sheetmusic4J **v{{< param "release.latest.version" >}}** is on Maven Central and already powers the staff notation view in [MelodyMatrix](https://melodymatrix.rocks/). It reads and writes MusicXML, [MIDI](/inspired-by/midi/) and [ABC notation](/inspired-by/abc/) through a single `ScoreFile` facade, imports [Guitar Pro](/inspired-by/guitarpro/) 7/8 files (experimental), and renders scores natively in JavaFX, including a play-along strip view with a moving cursor and per-note highlighting. Next up: an interactive `NodeSheetView` with clickable, selectable notes, a 3D fly-over play-along view, and steadily better engraving fidelity across real-world scores.
+Sheetmusic4J **v{{< param "release.latest.version" >}}** is on Maven Central and already powers the staff notation view in [MelodyMatrix](https://melodymatrix.rocks/). It reads and writes MusicXML, [MIDI](/inspired-by/midi/) and [ABC notation](/inspired-by/abc/) through a single `ScoreFile` facade, imports [Guitar Pro](/inspired-by/guitarpro/) 7/8 files (experimental), and renders scores natively in JavaFX: a page view with a play-along cursor, a one-line strip view, a 3D fly-over view, and an interactive `NodeSheetView` with clickable, selectable notes. A toolkit-neutral `render` module and a headless `render-awt` module render the same scores to images without JavaFX. Next up: steadily better engraving fidelity across real-world scores, driven by your [visual issue reports](https://github.com/sheetmusic4j/sheetmusic4j/blob/main/CONTRIBUTING.md).
 
 **Like where this is going?** [Star the project on GitHub](https://github.com/sheetmusic4j/sheetmusic4j) to follow along, and [tell us what you're building](https://github.com/sheetmusic4j/sheetmusic4j/issues) with it: your use cases decide what comes next.
 

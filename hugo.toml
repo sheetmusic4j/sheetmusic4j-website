@@ -24,5 +24,6 @@ images = ['img/og-image.png']
 name = 'Frank Delporte'
 
 [params.release.latest]
-version = '0.0.3'
-date = '2026-07-30'
+version = '0.0.4'
+date = '2026-10-16'
+post = '/status/2026/20261016-release-0.0.4/'

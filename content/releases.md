@@ -4,6 +4,36 @@ description = "Release notes and changelog for the Sheetmusic4J Java library, in
 weight = 10
 +++
 
+## 2026-10-16, 0.0.4
+
+A big release with two new interactive views, a new module structure for rendering, and a thorough architectural cleanup. More info and details in [this blog post](/status/2026/20261016-release-0.0.4/).
+
+* **New modules**
+  * **`render`**: toolkit-neutral drawing of a `LayoutResult` through the `RenderSurface` abstraction. `ScorePainter`, `RenderSurface`, `RenderColor`, `NoteBackgroundStyle`, `SmuflGlyphs` and the Bravura font moved here from `fxviewer` (same `com.sheetmusic4j.render` package). `fxviewer` depends on it transitively, so existing `fxviewer` users don't need to change anything.
+  * **`render-awt`**: headless rendering to images through AWT, with `AwtRenderSurface` and `HeadlessScoreImage.render(score, width)` returning a `BufferedImage`, no display or JavaFX needed.
+  * All library modules are now proper JPMS modules with a `module-info.java`.
+* **FX Viewer**
+  * **`NodeSheetView` (new)**: a retained-mode view that builds a JavaFX scene graph with one `Group` per note, rest and chord, so each element can take mouse and keyboard events, effects and tooltips. Hover and selection are built in, with `setOnElementClicked`/`setOnElementHover` callbacks.
+  * **`FlyOverSheetView` (new)**: a 3D variant of the strip view: the score lies on a sheet of paper, a perspective camera flies along it while it plays, a glowing ball per voice hops from note to note, and sounding noteheads light up.
+  * `SheetView` gained play-along support: a `cursorTime` cursor on the playing system, `revealTime` to fill the page in note by note, and `pageColor`/`inkColor` properties.
+  * `StripSheetView` gained `revealTime` and `pageColor`/`inkColor`, and barlines now line up across staves.
+  * Performance and memory improvements: tiled layout drawing (only the visible region is painted) and a shared font cache.
+* **Engraving**
+  * The monolithic `Engraver` was split into focused packages (`analysis`, `page`, `spacing`, `staff`, `glyph`, `text`), guarded by new layout snapshot tests.
+  * New `PlaybackTimeline` maps playback time to layout positions, used by the cursor and reveal features.
+  * `LayoutResult.hitTest(x, y)` finds the note at a layout position, so canvas-based views can do picking too.
+  * Fixed barline thickness.
+* **Core**
+  * New `ScoreFormat`, `ScoreReader` and `ScoreWriter` interfaces. All readers and writers implement them, `ScoreFile` dispatches through them, and additional formats can be plugged in as `ServiceLoader` services.
+  * Format exceptions (`MusicXmlException`, `MidiException`, `AbcException`, `GuitarProException`) now share a common `ScoreFormatException` base class.
+  * Exact rhythmic arithmetic with the new `Fraction` record and `MeasureTiming`.
+  * Size limits on reading compressed files (`.mxl`, `.gp`) to guard against oversized archives.
+* **FX Demo**
+  * New `FlyOverDemoApp` and `NodeDemoApp` (drag notes to move them, Shift for sharp, Alt/Option for flat), available as the `-Pflyover` and `-Pnode` Maven profiles next to `-Pstrip`.
+  * New "Report Visual Issue..." button that captures screenshots and a description to report rendering differences, see [CONTRIBUTING.md](https://github.com/sheetmusic4j/sheetmusic4j/blob/main/CONTRIBUTING.md).
+
+Full differences are listed on [GitHub > compare/v0.0.3...v0.0.4](https://github.com/sheetmusic4j/sheetmusic4j/compare/v0.0.3...v0.0.4)
+
 ## 2026-07-30, 0.0.3
 
 A small patch release that finishes wiring [ABC notation](/inspired-by/abc/) into the `ScoreFile` facade. More info and details in [this blog post](/status/2026/20260730-release-0.0.3/).
