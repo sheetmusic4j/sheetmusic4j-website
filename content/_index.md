@@ -82,7 +82,7 @@ Needs only `javafx.graphics`. Fast startup, tiny jlink footprint, no network.
   {{% /card %}}
 {{< /cards >}}
 
-Wondering about the standards behind it? Read what [inspired Sheetmusic4J](/inspired-by/): MusicXML, OpenSheetMusicDisplay, MIDI, ABC notation, Guitar Pro, SMuFL, the Bravura music font, and the MusicXML.com test files. And check the [sheetmusic terminology](/notation-terminology/) glossary to see which class/method draws which notation element.
+Wondering about the standards behind it? Read what [inspired Sheetmusic4J](/inspired-by/): MusicXML, OpenSheetMusicDisplay, MIDI, ABC notation, LilyPond, Guitar Pro, SMuFL, the Bravura music font, and the MusicXML.com test files. And check the [sheetmusic terminology](/notation-terminology/) glossary to see which class/method draws which notation element.
 
 The sources of this project are available on [github.com/sheetmusic4j/sheetmusic4j](https://github.com/sheetmusic4j/sheetmusic4j).
 
@@ -96,7 +96,7 @@ Building something with Sheetmusic4J? [Let us know](https://github.com/sheetmusi
 
 ## Current status
 
-Sheetmusic4J **v{{< param "release.latest.version" >}}** is on Maven Central and already powers the staff notation view in [MelodyMatrix](https://melodymatrix.rocks/). It reads and writes MusicXML, [MIDI](/inspired-by/midi/) and [ABC notation](/inspired-by/abc/) through a single `ScoreFile` facade, imports [Guitar Pro](/inspired-by/guitarpro/) 7/8 files (experimental), and renders scores natively in JavaFX: a page view with a play-along cursor, a one-line strip view, a 3D fly-over view, and an interactive `NodeSheetView` with clickable, selectable notes. A toolkit-neutral `render` module and a headless `render-awt` module render the same scores to images without JavaFX. Next up: steadily better engraving fidelity across real-world scores, driven by your [visual issue reports](https://github.com/sheetmusic4j/sheetmusic4j/blob/main/CONTRIBUTING.md).
+Sheetmusic4J **v{{< param "release.latest.version" >}}** is on Maven Central and already powers the staff notation view in [MelodyMatrix](https://melodymatrix.rocks/). It reads and writes MusicXML, [MIDI](/inspired-by/midi/), [ABC notation](/inspired-by/abc/) and [LilyPond](/inspired-by/lilypond/) through a single `ScoreFile` facade, imports [Guitar Pro](/inspired-by/guitarpro/) 7/8 files (experimental), and renders scores natively in JavaFX: a page view with a play-along cursor, a one-line strip view, a 3D fly-over view, and an interactive `NodeSheetView` with clickable, selectable notes. A toolkit-neutral `render` module and a headless `render-awt` module render the same scores to images without JavaFX. Next up: steadily better engraving fidelity across real-world scores, driven by your [visual issue reports](https://github.com/sheetmusic4j/sheetmusic4j/blob/main/CONTRIBUTING.md).
 
 **Like where this is going?** [Star the project on GitHub](https://github.com/sheetmusic4j/sheetmusic4j) to follow along, and [tell us what you're building](https://github.com/sheetmusic4j/sheetmusic4j/issues) with it: your use cases decide what comes next.
 

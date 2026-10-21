@@ -10,7 +10,7 @@ Sheetmusic4J requires Java 21 or higher.
 
 This library is available from Maven Central.
 
-If you only need the API to load, inspect, and generate MusicXML/MIDI files:
+If you only need the API to load, inspect, and generate MusicXML/MIDI/ABC/LilyPond files:
 
 ```xml
 <dependency>
@@ -34,7 +34,7 @@ If you want to render sheet music with the JavaFX `SheetView`, which includes th
 
 ### Using the Core Library
 
-`ScoreFile` is a convenience facade that dispatches to the right reader/writer based on the file extension (`.musicxml`, `.xml`, `.mxl`, `.mid`, `.midi`):
+`ScoreFile` is a convenience facade that dispatches to the right reader/writer based on the file extension (`.musicxml`, `.xml`, `.mxl`, `.mid`, `.midi`, `.abc`, `.ly`):
 
 ```java
 import com.sheetmusic4j.core.io.ScoreFile;

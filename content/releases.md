@@ -4,6 +4,25 @@ description = "Release notes and changelog for the Sheetmusic4J Java library, in
 weight = 10
 +++
 
+## 2026-10-21, 0.0.5
+
+LilyPond import and export, plus engraving improvements for tuplets and clefs. More info and details in [this blog post](/status/2026/20261021-release-0.0.5/).
+
+* **Core**
+  * **LilyPond (new)**: `LilyPondReader` and `LilyPondWriter` read and write `.ly` files, registered as a `ScoreFormat` service so `ScoreFile` handles the `.ly` extension. Supports `\relative`/`\fixed`/`\transpose`, all note-name languages, chords, ties, slurs, beams, tuplets, grace notes, repeats, `\partial`, multiple staves and voices, piano staves and staff groups, lyrics, chord names, dynamics, tempo and rehearsal marks, `\tag` and `\include`. Engraving tweaks and Scheme code are skipped. See [Inspired By: LilyPond](/inspired-by/lilypond/).
+  * `LilyPondException` extends `ScoreFormatException`.
+  * `Clef` gained `octaveChange` (treble clef with an 8 below or above).
+  * `Tuplet` gained `actualNotes`, `normalNotes` and `placement`; the MusicXML reader and writer handle the tuplet `placement` attribute.
+  * `Fraction` is now shared by the ABC reader/writer, with `Fraction.times`. New `KeySignature.alter(Step)` and `NoteType.quarters(dots)`.
+* **Engraving and render**
+  * Tuplet brackets and numbers go on the stem side (or the requested placement), clear beams, and support nested tuplets. `TupletPlacement` has a new `above` flag.
+  * New glyphs for the octave clefs (G/F/C with 8 below, G with 8 above) and the percussion clef.
+  * Note spacing uses `StrictMath` so layouts are identical on every CPU architecture.
+* **FX Demo**
+  * Opens `.ly` files, with a set of LilyPond sample scores and reference images.
+
+Full differences are listed on [GitHub > compare/v0.0.4...v0.0.5](https://github.com/sheetmusic4j/sheetmusic4j/compare/v0.0.4...v0.0.5)
+
 ## 2026-10-16, 0.0.4
 
 A big release with two new interactive views, a new module structure for rendering, and a thorough architectural cleanup. More info and details in [this blog post](/status/2026/20261016-release-0.0.4/).
