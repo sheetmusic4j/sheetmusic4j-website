@@ -60,6 +60,6 @@ Score score = ScoreFile.load(Path.of("bach-bwv610.ly"));
 ScoreFile.save(ScoreFile.load(Path.of("song.musicxml")), Path.of("song.ly"));
 ```
 
-LilyPond's input language is huge and programmable, so Sheetmusic4J will never read every `.ly` file the way LilyPond does. The goal is to correctly read the music itself in real-world scores. If you find a file that doesn't load or look right, [an issue with the file attached](https://github.com/sheetmusic4j/sheetmusic4j/issues) is the best way to get it fixed.
+LilyPond's input language is huge and programmable, so Sheetmusic4J will never read every `.ly` file the way LilyPond does. The goal is to correctly read the music itself in real-world scores. If you find a file that doesn't load or look right, [an issue with the file attached](https://github.com/sheetmusic4j/sheetmusic4j/issues) is the best way to get it fixed. The LilyPond integration was tracked in [issue #8](https://github.com/sheetmusic4j/sheetmusic4j/issues/8).
 
 More info: [lilypond.org](https://lilypond.org/).

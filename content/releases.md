@@ -9,7 +9,7 @@ weight = 10
 LilyPond import and export, plus engraving improvements for tuplets and clefs. More info and details in [this blog post](/status/2026/20261021-release-0.0.5/).
 
 * **Core**
-  * **LilyPond (new)**: `LilyPondReader` and `LilyPondWriter` read and write `.ly` files, registered as a `ScoreFormat` service so `ScoreFile` handles the `.ly` extension. Supports `\relative`/`\fixed`/`\transpose`, all note-name languages, chords, ties, slurs, beams, tuplets, grace notes, repeats, `\partial`, multiple staves and voices, piano staves and staff groups, lyrics, chord names, dynamics, tempo and rehearsal marks, `\tag` and `\include`. Engraving tweaks and Scheme code are skipped. See [Inspired By: LilyPond](/inspired-by/lilypond/).
+  * **LilyPond (new)**: `LilyPondReader` and `LilyPondWriter` read and write `.ly` files, registered as a `ScoreFormat` service so `ScoreFile` handles the `.ly` extension. Supports `\relative`/`\fixed`/`\transpose`, all note-name languages, chords, ties, slurs, beams, tuplets, grace notes, repeats, `\partial`, multiple staves and voices, piano staves and staff groups, lyrics, chord names, dynamics, tempo and rehearsal marks, `\tag` and `\include`. Engraving tweaks and Scheme code are skipped. See [Inspired By: LilyPond](/inspired-by/lilypond/) and [issue #8](https://github.com/sheetmusic4j/sheetmusic4j/issues/8). Thanks to Dani_E2e on [Reddit](https://www.reddit.com/r/java/comments/1vapmf2/comment/p0ppvzf/) and Jurgen Lambrecht for the suggestion.
   * `LilyPondException` extends `ScoreFormatException`.
   * `Clef` gained `octaveChange` (treble clef with an 8 below or above).
   * `Tuplet` gained `actualNotes`, `normalNotes` and `placement`; the MusicXML reader and writer handle the tuplet `placement` attribute.
