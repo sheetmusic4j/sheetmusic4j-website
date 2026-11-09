@@ -1,6 +1,6 @@
 +++
 title = "Sheetmusic4J :: A Java(FX) library for rendering and interacting with sheet music."
-description = "Sheetmusic4J is an open-source Java library to parse MusicXML files into Java objects and generate music sheet JavaFX visualizations."
+description = "Open-source Java library to read and write MusicXML, MIDI, ABC and LilyPond and render sheet music natively in JavaFX. No WebView. Page, strip and 3D fly-over views, play-along cursor."
 type = "home"
 +++
 
