@@ -3,6 +3,8 @@
   Keeps the theme's original custom.css / custom.js loading behaviour, and
   additionally injects a robots noindex for the search page, a canonical link
   and JSON-LD structured data for SEO.
+  On the homepage the JSON-LD SoftwareSourceCode takes softwareVersion/dateModified
+  from [params.release.latest] in hugo.toml.
 */ -}}
 
 {{- /* ---- keep the theme's generated search page out of search results ----
@@ -34,6 +36,8 @@
       "programmingLanguage": "Java",
       "runtimePlatform": "Java 21+, JavaFX",
       "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "softwareVersion": {{ site.Params.release.latest.version }},
+      "dateModified": {{ site.Params.release.latest.date }},
       "image": {{ (printf "img/og-image.png" | absURL) }},
       "author": {
         "@type": "Person",
